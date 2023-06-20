@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Formulário de Palavras</h1>
+
+  <form th:action="@{dicionario.id ==null} ? @{/dicionario/salvar} : @{/dicionario/atualizar}" method="POST">
+    <label for="palavra">Palavra:</label>
+    <input type="text" id="palavra" name="palavra" required>
+
+    <br><br>
+
+    <label for="significado">Significado:</label>
+    <input type="text" id="significado" name="significado" required>
+
+    <br><br>
+
+    <button type="submit">Salvar</button>
+  </form>
+    
+</body>
+</html>
